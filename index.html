@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>당직근무 도우미</title>
+    <style>
+        body {
+            margin:0;
+        }
+
+        .nav-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #c1e6dd;
+            list-style-type: none;
+        }
+
+        .item {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .section1-background {
+            background-color: #fdfd96;
+        }
+
+        .section1-container {
+            display: flex;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .section1-item {
+            padding: 15px;
+        }
+
+        .section2-background {
+            background-color: #fdc3c7;
+        }
+
+        .section2-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .section2-item {
+            padding: 30px;
+        }
+
+        #todayServiceDialog {
+			width:40%; 
+			background-color: #f4ffef; 
+			border:1px solid black; 
+			border-radius: 7px;
+		}
+
+        /* 버튼 디자인 나중에 수정 필요 */
+        #openTodayServiceButton {
+			padding: 7px 30px;
+			background-color: #66ccff;
+			color: white;
+			font-size: 15px;
+			border: 0;
+			outline: 0;
+		}
+
+        #closeTodayServiceButton {
+			padding: 7px 30px;
+			background-color: #66ccff;
+			color: white;
+			font-size: 15px;
+			border: 0;
+			outline: 0;
+		}
+    </style>
+</head>
+<body>
+    <!-- 네비바 -->
+    <nav>
+        <ul class="nav-container">
+            <li class="item"><h3>2023.11.15</h3></li>
+            <li class="item"><button id="openTodayServiceButton" onclick="openTodayService()">배식조</button></li>
+            <li class="item"><button id="openTodayServiceButton" onclick="openTodayService()">종교 종합</button></li>
+            <li class="item"><button id="openTodayServiceButton" onclick="openTodayService()">메모장</button></li>
+            <li class="item"><button id="openTodayServiceButton" onclick="openTodayService()">정보 수정</button></li>
+        </ul>
+    </nav>
+
+    <!-- todo list -->
+    <div class="section1-background">
+        <h1>오늘 해야할 일</h1>
+        <div class="section1-container">
+            <li class="section1-item">
+                <input type="checkbox" id="isClear1" name="총기함 점검하기">
+                <label for="isClear1"><span>총기함 점검하기</span></label>
+            </li>
+            <li class="section1-item">
+                <input type="checkbox" id="isClear2" name="난방 및 보일러 틀기">
+                <label for="isClear2"><span>난방 및 보일러 틀기</span></label>
+            </li>
+            <li class="section1-item">
+                <input type="checkbox" id="isClear3" name="인수인계 사항 작성하기">
+                <label for="isClear3"><span>인수인계 사항 작성하기</span></label>
+            </li>
+            <li class="section1-item">
+                <input type="checkbox" id="isClear4" name="상황 유무">
+                <label for="isClear4"><span>상황 유무</span></label>
+            </li>
+            <li class="section1-item">
+                <input type="checkbox" id="isClear5" name="경작서 내리기">
+                <label for="isClear5"><span>경작서 내리기</span></label>
+            </li>
+        </div>
+    </ul>
+
+    <!-- 근무자 관련 정보판 -->
+    <div class="section2-background">
+        <h1>오늘의 근무자!</h1>
+        <ul class="section2-container">
+            <li class="section2-item">
+                <h2>오늘!!</h2>
+                <h3>당직사령: 대위1</h3>
+                <h3>당직사관: 중사1</h3>
+                <h3>당직부관: 상병1</h3>
+                <h3>위병사관: 하사1</h3>
+            </li>
+            <li class="section2-item">
+                <h2>내일!!</h2>
+                <h3>당직사령: 대위2</h3>
+                <h3>당직사관: 중사2</h3>
+                <h3>당직부관: 상병2</h3>
+                <h3>위병사관: 하사2</h3>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <dialog id="todayServiceDialog">
+            <h1>아침</h1>
+            <h3>일병1, 일병2</h3>
+            <br><br>
+            <h1>점심</h1>
+            <h3>일병3, 일병5</h3>
+            <br><br>
+            <h1>저녁</h1>
+            <h3>일병4, 일병6</h3>
+            <br><br>
+            <input type="button" id="closeTodayServiceButton" onclick="closeTodayService()" value="확인" >
+        </dialog>
+    </div>
+    <script>
+        function openTodayService() {
+            var dialog = document.getElementById("todayServiceDialog");
+            dialog.showModal();
+        }
+
+        function closeTodayService() {
+            var dialog = document.getElementById("todayServiceDialog");
+            dialog.close();
+        }
+    </script>
+</body>
+</html>
