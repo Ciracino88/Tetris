@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+</head>
+<body>
+    <header>
+        <h2>나혼자만 일기장</h2>
+    </header>
+    <input id="id" type="text" placeholder="아이디">
+    <br>
+    <input id="pw" type="text" placeholder="비밀번호">
+    <br><br>
+    <button onclick="login()">로그인</button>
+    <script>
+        function login() {
+            const input_id = document.getElementById("id");
+            const input_pw = document.getElementById("pw");
+            
+            const next_page = "main.html";
+
+            if (input_id.value == "ciracino88") {
+                if (input_pw.value == "ttip@814") {
+                    location.href = next_page;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
