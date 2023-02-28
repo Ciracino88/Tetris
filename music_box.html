@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memo</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            margin-left: 30px;
+        }
+        .sidebar-wrapper {
+            border: 1px solid black;
+            list-style-type: none;
+            padding: 50px;
+            margin-top: 30px;
+        }
+        .sidebar-title {
+            margin-top: 0px
+        }
+        .sidebar-item {
+
+        }
+        .music-list-wrapper {
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+        }
+        .music-list-item {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid black;
+            padding: 5px
+        }
+        .memobox-wrapper {
+            border: 1px solid black;
+            list-style-type: none;
+            padding: 50px;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="sidebar-wrapper">
+            <h4 class="sidebar-title">ciracino88's DIARY</h4>
+            <li class="sidebar-item"><a href="#">홈</a></li>
+            <li class="sidebar-item"><a href="#">음악 저장소</a></li>
+            <li class="sidebar-item"><a href="#">글 보관함</a></li>
+            <li class="sidebar-item"><a href="#">프로필</a></li>
+        </ul>
+        <ul>
+            <li class="music-list-item">
+                <p class="music-title">제목</p>
+                <button class="music-play-btn">재생</button>
+                <button class="music-stop-btn">정지</button>
+            </li>
+        </ul>
+        <ul class="memobox-wrapper">
+            <h4 class="sidebar-title">ciracino88's others</h4>
+            <li class="sidebar-item"><a href="#">글1</a></li>
+            <li class="sidebar-item"><a href="#">글2</a></li>
+            <li class="sidebar-item"><a href="#">글3</a></li>
+            <li class="sidebar-item"><a href="#">글4</a></li>
+        </ul>
+    </div>
+    <script>
+        function setMusic() {
+            const json = "musicFile.json";
+            var data = JSON.parse(JSON.stringify(json));
+            
+        }
+    </script>
+</body>
+</html>
